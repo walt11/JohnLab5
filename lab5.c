@@ -197,40 +197,31 @@ int main( int argc, char *argv[]){
 		// if "-n" in argument
 		if(strcmp(argv[i],"-n") == 0){
 
-			if((i+1) >= argc){
-				// If the next value is bigger than arc then a value is missing
-				printf("Out of index: ");
-			}else{
-				filenumber = atoi(argv[i+1]);
-				if(filenumber != 0){
-					i++;
-				}
+			filenumber = atoi(argv[i+1]);
+			if(filenumber != 0){
+				//skip over the file number to the next argument
+				i++;
 			}
 		}
+
 		// if "-o" in argument
 		else if(strcmp(argv[i],"-o") == 0){
 			offset_check = 1;
-			if((i+1) >= argc){
-				// If the next value is bigger than arc then a value is missing
-				printf("Out of index: ");
-			}else{
-				offset_value = atof(argv[i+1]);
-				if(offset_value != 0){
-					i++;
-				}
+			
+			offset_value = atof(argv[i+1]);
+			if(offset_value != 0){
+				// skip over the offset value to the next argument
+				i++;
 			}
 		}
+
 		// if "-s" in argument
 		else if(strcmp(argv[i],"-s") == 0){
 			scale_check = 1;
-			if((i+1) >= argc){
-				// If the next value is bigger than arc then a value is missing
-				printf("Out of index: ");
-			}else{
-				scale_factor = atof(argv[i+1]);
-				if(scale_factor != 0){
-					i++;
-				}
+			scale_factor = atof(argv[i+1]);
+			if(scale_factor != 0){
+				// skip over the scale factor to the next argument
+				i++;
 			}
 		}
 		// if "-S" in argument
@@ -248,13 +239,8 @@ int main( int argc, char *argv[]){
 		// if "-r" in argument
 		else if(strcmp(argv[i],"-r") == 0){
 			rename = 1;
-			if((i+1) >= argc){
-				// If the next value is bigger than arc then a value is missing
-				printf("Out of index: ");
-			}else{
-				filename = argv[i+1];
-				i++;
-			}
+			filename = argv[i+1];
+			i++;
 		}
 		// if "-h" in argument
 		else if(strcmp(argv[i],"-h") == 0){
