@@ -238,9 +238,40 @@ int main( int argc, char *argv[]){
 		}
 		// if "-r" in argument
 		else if(strcmp(argv[i],"-r") == 0){
-			rename = 1;
 			filename = argv[i+1];
-			i++;
+			// check that a newfilename was given
+			if(filename == NULL){
+				printf("No new filename given\n");
+			}
+			else if(strcmp(filename,"-n") == 0){
+				printf("No new filename given\n");
+			}
+			else if(strcmp(filename,"-o") == 0){
+				printf("No new filename given\n");
+			}
+			else if(strcmp(filename,"-s") == 0){
+				printf("No new filename given\n");
+			}
+			else if(strcmp(filename,"-S") == 0){
+				printf("No new filename given\n");
+			}
+			else if(strcmp(filename,"-C") == 0){
+				printf("No new filename given\n");
+			}
+			else if(strcmp(filename,"-N") == 0){
+				printf("No new filename given\n");
+			}
+			else if(strcmp(filename,"-r") == 0){
+				printf("No new filename given\n");
+			}
+			else if(strcmp(filename,"-h") == 0){
+				printf("No new filename given\n");
+			}
+			else{
+				rename = 1;
+				// skip over the new file name to the next argument
+				i++;
+			}
 		}
 		// if "-h" in argument
 		else if(strcmp(argv[i],"-h") == 0){
@@ -316,46 +347,8 @@ int main( int argc, char *argv[]){
 		
 		// if the rename flag is set
 		if(rename == 1){
-			// check that a newfilename was given
-			if(filename == NULL){
-				printf("No new filename given\n");
-			}
-			else if(strcmp(filename,"-n") == 0){
-				printf("Error with input\n");
-				return -1;
-			}
-			else if(strcmp(filename,"-o") == 0){
-				printf("Error with input\n");
-				return -1;
-			}
-			else if(strcmp(filename,"-s") == 0){
-				printf("Error with input\n");
-				return -1;
-			}
-			else if(strcmp(filename,"-S") == 0){
-				printf("Error with input\n");
-				return -1;
-			}
-			else if(strcmp(filename,"-C") == 0){
-				printf("Error with input\n");
-				return -1;
-			}
-			else if(strcmp(filename,"-N") == 0){
-				printf("Error with input\n");
-				return -1;
-			}
-			else if(strcmp(filename,"-r") == 0){
-				printf("Error with input\n");
-				return -1;
-			}
-			else if(strcmp(filename,"-h") == 0){
-				printf("Error with input\n");
-				return -1;
-			}
-			else{
-				printf("Doing rename\n");
-				renameFile(filename,filenumber);
-			}
+			printf("Doing rename\n");
+			renameFile(filename,filenumber);
 		}
 		
 		// if the statistics flag is set
